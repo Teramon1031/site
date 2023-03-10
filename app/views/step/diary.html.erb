@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="sub-container">
+    <div class="subpage-title">
+      <h2><%= @diary.title %></h2>
+    </div>
+    <div class="contents">
+      <p><%= safe_join(@diary.content.split("\n"),tag(:br)) 
+      %></p>
+    </div>
+    <div class="moveto_btn">
+      <% if @diary.id > 1%>
+        <%previd=@id.to_i-1%>
+        <p class="prev"><%=link_to("前へ","/step/#{previd.to_s}")%></p>
+      <% end %>
+      <% if @diary.id < @diarysize %>
+        <%nextid=@id.to_i+1%>
+        <p class="next"><%=link_to("次へ","/step/#{nextid.to_s}")%>
+        </p>
+      <%end%>
+    </div>
+  </div>
+  <div class="sub-container">
+    <div class="subpage-title">
+      <h2>他の日記を見る</h2>
+    </div>
+    <div class="card">
+      <ul>
+        <% @diaries.each do |diary| %>
+          <%= link_to("/mypage/diary/#{diary.id}") do %>
+            <li>
+              <p class="title01"><%=diary.title%></p>
+              <p><%=diary.short%></p>
+              <span class="next">> 続きを読む</span>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom-btn">
+    <%=link_to("/step") do %>
+      <span>TOPへ</span>
+    <% end %>
+  </div>
+</div>

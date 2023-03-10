@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="subpage-title">
+    <h2>STEPについて</h2>
+  </div>
+  <div class="contents">
+    <p>徒然なるままに書いたとりとめのない日記たち。</p>
+    <div class="card">
+      <ul>
+        <% @diaries.each do |diary| %>
+          <%=link_to("/step/#{diary.id}") do%>
+            <li>
+              <span class="fa fa-pen-nib"></span>
+              <p class="title01"><%=diary.title%></p>
+              <p><%=diary.short%></p>
+              <span class="next">> 続きを読む</span>
+            </li>
+          <%end%>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

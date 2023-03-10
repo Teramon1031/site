@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>teramon</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/d2662818c1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
+    <!--Web Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--animate.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  </head>
+  <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
+<body>
+  <div id="header-hider">
+    <div class="header">
+      <a href="/">
+        <div class="page-title">
+          <h1>てらもんのさいと。</h1>
+        </div>
+      </a>
+      <div class="menu">
+        <ul class="menu-list">
+          <li class="faa-parent animated-hover">
+            <%# <i class="fa-solid fa-cube fa-fw faa-spin"></i> %>
+            <a href="/history">これまでのこと。</a>
+          </li>
+          <li class="faa-parent animated-hover">
+            <%# <i class="fa-solid fa-cube fa-fw faa-spin"></i> %>
+            <a href="/step">STEPのこと。</a>
+          </li>
+          <li class="faa-parent animated-hover">
+            <%# <i class="fa-solid fa-cube fa-fw faa-spin"></i> %>
+            <a href="/foresight">これからのこと。</a>
+          </li>
+          <li class="faa-parent animated-hover">
+            <%# <i class="fa-solid fa-cube fa-fw faa-spin"></i> %>
+            <a href="/daily">日々のこと。</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="top top-wrapper">
+    <div id="top-text">
+      <h1 id="top-h1">Terakado Mio</h1>
+      <p id="top-p">私がどんな人間であるかを、私が私のために記録するための場所。</p>
+    </div>
+  </div>
+  <%= yield %>
+  <div class="footer">
+    <ul>
+      <li>
+        <%= link_to("てらもん用ログイン","/mypage", class:"menu")%>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

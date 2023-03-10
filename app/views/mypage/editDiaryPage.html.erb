@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="sub-container">
+    <div class="subpage-title">
+      <h2>日記を編集する</h2>
+    </div>
+    <div class="contents">
+      <div class="form">
+        <%= form_tag("/mypage/editDiary/#{@diary.id}") do %>
+          <h3>タイトル</h3>
+          <input type="text" name="title" value=<%=@diary.title%>>
+          <h3>コード</h3>
+          <input type="text" name="code" value=<%=@diary.code%>>
+          <h3>本文</h3>
+          <textarea name="content"><%=@diary.content%></textarea>
+          <div class="toggle_button">
+            <input id="toggle" class="toggle_input" type="checkbox" name="archive" />
+            <label for="toggle" class="toggle_label"/>
+          </div>
+          <input class="form-btn" type="submit" value="完了">
+        <% end %>
+        <%= form_tag("/mypage/deleteDiary/#{@diary.id}") do %>
+          <input class="delete" type="submit" value="削除">
+        <%end%>
+      </div>
+    </div>
+  </div>
+  <div class="sub-container">
+    <div class="subpage-title">
+      <h2>その他の日記を編集する</h2>
+    </div>
+    <div class="card">
+      <ul>
+        <% @diaries.each do |diary| %>
+          <%= link_to("/mypage/diary/#{diary.id}") do %>
+            <li>
+              <p class="title01"><%=diary.title%></p>
+              <%if diary.archive %>
+                <p>Archived</p>
+              <%else%>
+                <p>Public</p>
+              <%end%>
+              <p><%=diary.short%></p>
+              <span class="next">> 編集する</span>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom-btn">
+    <%=link_to("/mypage") do %>
+      <span>MyPage TOPへ</span>
+    <%end%>
+  </div>
+</div>
