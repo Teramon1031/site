@@ -1,5 +1,5 @@
 class MypageController < ApplicationController
-  before_action :require_login, only: [:destroy]
+  before_action :require_login, except: [:login,:signup ,:create]
   # protect_from_forgery except: [:deleteDiary]
 
   def edit
@@ -10,13 +10,24 @@ class MypageController < ApplicationController
   end
 
   def create
-    user = User.find_by(id: "1")
+    user = User.find_by(id: 1)
     if user && user.authenticate(params[:password])
+      flash[:notice]="成功"
       log_in(user)
       redirect_to("/mypage")
     else
-      flash.now[:danger] = 'メールアドレスかパスワードが間違っています。'
-      # render 'new'
+      flash[:notice] = '何かが間違っています。'
+    end
+  end
+
+  def signup
+    user = User.new(password: params[:password])
+    if user.save
+      flash[:notice]="成功"
+      log_in(user)
+      redirect_to("/mypage")
+    else
+      flash[:notice] = '何かが間違っています。'
     end
   end
 
@@ -65,5 +76,9 @@ class MypageController < ApplicationController
     end
   end
 
+  def logout
+    log_out()
+    redirect_to("/login")
+  end
  
 end

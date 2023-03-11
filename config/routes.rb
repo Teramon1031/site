@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'login'=>"mypage#login"
-  post 'login'=>"mypage#create"
+  post 'loginnow'=>"mypage#create"
+  post 'logout'=>"mypage#logout"
+  post 'signupnow'=>"mypage#signup"
 
   get 'mypage'=>"mypage#edit"
   post 'mypage/addDiary'=>"mypage#addDiary"

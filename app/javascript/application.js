@@ -7,7 +7,7 @@ import jquery from "jquery"
 window.$ = jquery
 
 $(function () {
-    const topPageURL = "http://localhost:3000/";
+    const topPageURL = "http://teramon.onrender.com/";
     const dailyPageReg = topPageURL + "daily";
     const stepPageReg = new RegExp("^" + topPageURL + "step");
     const historyPageReg = topPageURL + "history";
