@@ -1,29 +1,28 @@
-<h2>ログイン</h2>
-<%# <%= form_with model: @session, local: true do |form| %>
-  <%= form_tag("/loginnow") do %>
-    <div class="form">
-      <div class="form-body">
-        <h3>パスワード</h3>
-        <input type="text" name="password">
-        <div class="flash">
-          <p><%=flash[:notice]%></p>
-          <p><%=session[:user_id]%></p>
+<div class="top-no-bg">
+</div>
+<div class="container">
+  <div class="sub-container">
+    <h2>ログイン</h2>
+    <div class="contents">
+      <%= form_tag("/loginnow") do %>
+        <div class="form">
+          <div class="form-body">
+            <h3>パスワード</h3>
+            <input type="text" name="password">
+            <div class="flash">
+              <p><%=flash[:notice]%></p>
+              <p><%=session[:user_id]%></p>
+            </div>
+            <input type="submit" value="ログイン">
+          </div>
         </div>
-        <input type="submit" value="ログイン">
-      </div>
+      <% end %>
     </div>
-  <% end %>
-  <h2>サインアップ</h2>
-  <%= form_tag("/signupnow") do %>
-    <div class="form">
-      <div class="form-body">
-        <h3>パスワード</h3>
-        <input type="text" name="password">
-        <div class="flash">
-          <p><%=flash[:notice]%></p>
-          <p><%=session[:user_id]%></p>
-        </div>
-        <input type="submit" value="ログイン">
-      </div>
+  </div>
+  <div class="sub-container">
+    <h2>サインアップ</h2>
+    <div class="contents">
+      <p>Currently Closed</p>
     </div>
-  <% end %>
+  </div>
+</div>

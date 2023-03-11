@@ -1,3 +1,5 @@
+<div class="top-no-bg">
+</div>
 <div class="container">
   <div class="sub-container">
     <div class="subpage-title">
@@ -26,8 +28,9 @@
     <div class="card">
       <ul>
         <% @diaries.each do |diary| %>
-          <%= link_to("/mypage/diary/#{diary.id}") do %>
+          <%= link_to("/step/#{diary.id}") do %>
             <li>
+              <span class="fa fa-pen-nib"></span>
               <p class="title01"><%=diary.title%></p>
               <p><%=diary.short%></p>
               <span class="next">> 続きを読む</span>

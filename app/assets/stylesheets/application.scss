@@ -1,7 +1,7 @@
 /*
-* =require_tree . 
-*=require_self
-*/
+ *=require_tree . 
+ *=require_self
+ */
 
 :root {
     /* 中世パレット */
@@ -157,7 +157,7 @@ h3 {
 } */
 
 .top {
-    background: image-url("jerry_looking_out.JPG");
+    background: image-url('jerry.JPG') no-repeat;
     background-size: cover;
     background-attachment: fixed;
     position: relative;
@@ -178,11 +178,20 @@ h3 {
     bottom: 0;
 }
 
+.top-no-bg {
+    position: relative;
+    width: 100%;
+    min-height: 70px;
+    display: flex;
+    justify-content: center;
+}
+
 #top-text {
     margin: 0;
     padding: 300px 10px;
     position: relative;
     z-index: 1;
+
 }
 
 #top-text h1 {
