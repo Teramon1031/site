@@ -152,7 +152,7 @@ h3 {
 } */
 
 .top {
-    background: url("/jerry_looking_out.jpg") no-repeat;
+    background: url("/assets/jerry_looking_out.jpg") no-repeat;
     background-size: cover;
     background-attachment: fixed;
     position: relative;
